@@ -23,6 +23,7 @@
   min-block-size: 100dvb;
   background-image: var(--background);
   background-attachment: fixed;
+  background-size: cover;
 }
 
 .header {
