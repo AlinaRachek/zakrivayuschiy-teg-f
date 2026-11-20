@@ -13,10 +13,8 @@
 .page {
   display: flex;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  inline-size: var(--container-width);
+  align-items: center;
+  inline-size: 100%;
   font-family: var(--main-font), sans-serif;
   font-variation-settings: "wght" var(--card-body-weight);
   min-inline-size: 320px;
@@ -31,14 +29,13 @@
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
-  min-height: 368px;
+  padding: 130px 0;
+  margin: 100px 0 94px 0;
   inline-size: clamp(375px, calc(34.27vw + 246.5px), 700px);
   font-family: var(--accent-font), cursive;
   text-transform: uppercase;
   background-color: #fff;
   gap: 20px;
-  margin-top: 100px;
-  margin-bottom: 94px;
   border: solid 2px #000;
 }
 
@@ -140,10 +137,10 @@ h2 {
 }
 
 .card__icon-button {
-  border: none;
+  border: 2px solid transparent;
   background-color: #fff;
   padding: 0;
-  transition: box-shadow 0.3s ease;
+  transition: outline 0.3s ease;
   outline: none;
 }
 
@@ -175,7 +172,7 @@ h2 {
   height: 38px;
 }
 
-.card__like-button .button__text {
+.button__text {
   position: relative;
   color: #fff;
   mix-blend-mode: difference;
@@ -200,6 +197,7 @@ h2 {
   min-width: 335px;
   gap: 7px;
   justify-content: center;
+  margin-bottom: 100px;
 }
 
 .save-icon {
@@ -207,10 +205,6 @@ h2 {
 }
 
 .save-button .button__text {
-  position: relative;
-  color: #fff;
-  mix-blend-mode: difference;
-  z-index: 1;
   margin-top: 18px;
 }
 
@@ -258,12 +252,8 @@ h2 {
   min-height: 38px;
 }
 
-.ok-button-dialog span {
+.ok-button-dialog .buttontext {
   text-transform: uppercase;
-  position: relative;
-  color: #fff;
-  mix-blend-mode: difference;
-  z-index: 1;
 }
 
 
@@ -271,11 +261,10 @@ h2 {
 
 .button:focus {
   outline: none;
-  box-shadow: 2px 2px 0 #000;
 }
 
 .button:focus-visible {
-  outline: 2px solid #000;
+  box-shadow: 2px solid #000;
 }
 
 .button:hover::before {
@@ -339,8 +328,8 @@ h2 {
   animation: sparks 0.3s ease-in 0.3s 1;
 }
 
-.card__like-button:focus-visible {
-  box-shadow: 0 0 0 2px #000;
+.card__icon-button:focus-visible {
+  outline: 2px solid #000;
 }
 
 
@@ -363,7 +352,7 @@ h2 {
 
 @media (width <= 375px) {
   .header {
-    min-height: 327px;
+    padding: 120px 0;
     margin-bottom: 100px;
   }
   .card {
